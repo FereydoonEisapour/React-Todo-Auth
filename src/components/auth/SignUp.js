@@ -89,10 +89,10 @@ function SignUp({ SignInPageType }) {
                             </div>
                             <hr className="my-1" />
                             <div className='mt-3  d-flex  justify-content-center' >
-                                <button className='  btn btn-md text-primary btn-outline-none  ' 
-                                    value="false"
+                                <span className='text-primary fs-6 mx-2 bg-light border-0 ' 
+                                   
                                     onClick={SignInPageType}>Log in
-                                </button>
+                                </span>
                             </div>
                         </form>
                     </div>
