@@ -8,7 +8,7 @@ function Todos() {
   const userEmail = useSelector(selectUserEmail);
   return (
     <div className="row justify-content-center mx-4 mt-0  h-100" >
-      {userEmail ? (
+      {userEmail ?(
         <div className="">
           <div className="d-flex justify-content-center">
             <AddTodo />

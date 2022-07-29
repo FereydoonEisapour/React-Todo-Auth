@@ -1,25 +1,34 @@
 import { auth } from '../../data/firebase';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectUserEmail, selectUserName, selectUserAvatar, setUserLogOutState } from '../../features/userSlics';
+import { selectUserEmail, selectUserName, selectUserAvatar, setUserLogOutState, selectUserCookie } from '../../features/userSlics';
 import { Container, Navbar, Dropdown } from 'react-bootstrap';
 import { Switch } from '@mui/material';
 import useDarkMode from '../../hooks/DarkMode';
 import { Link, NavLink, Redirect } from 'react-router-dom';
+import { useEffect } from 'react';
 function Header() {
     const dispath = useDispatch();
+    const [theme, toggleTheme] = useDarkMode()
     const userName = useSelector(selectUserName);
     const userEmail = useSelector(selectUserEmail);
     const userAvatar = useSelector(selectUserAvatar);
+
     const label = { inputProps: { 'aria-label': 'Switch demo' } };
     const handelSignOut = () => {
         auth.signOut().then((result) => {
-            dispath(setUserLogOutState());
-        }).cath((err) => alert(err.message))
+            document.cookie = null
+            dispath(setUserLogOutState({
+            }));
+        })
+            .cath((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log(errorCode);
+                console.log(errorMessage);
+            })
     }
-    const [theme, toggleTheme] = useDarkMode()
 
-
-
+    
     return (
         <Navbar className='d-flex w-100' bg={theme} variant="light">
             <Container >

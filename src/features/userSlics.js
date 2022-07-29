@@ -4,7 +4,8 @@ const initialState = {
     userName: null,
     userEmail: null,
     userAvatar: null,
-    userPassword: null
+    userPassword: null,
+    userCookie: null
 }
 const userSlics = createSlice({
     name: 'user',
@@ -15,12 +16,14 @@ const userSlics = createSlice({
             state.userEmail = action.payload.userEmail;
             state.userAvatar = action.payload.userAvatar;
             state.userPassword = action.payload.userPassword;
+            state.userCookie = action.payload.userCookie
         },
         setUserLogOutState: state => {
             state.userName = null;
             state.userEmail = null;
             state.userAvatar = null;
             state.userPassword = null;
+            state.userCookie = null;
         },
     }
 });
@@ -29,4 +32,5 @@ export const selectUserName = state => state.user.userName;
 export const selectUserEmail = state => state.user.userEmail;
 export const selectUserAvatar = state => state.user.userAvatar;
 export const selectUserPassword = state => state.user.userPassword;
+export const selectUserCookie = state => state.user.userCookie
 export default userSlics.reducer;
