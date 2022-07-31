@@ -20,23 +20,24 @@ const AddTodo = () => {
         setText(e.target.value)
     }
     return (
-        <ListGroup className=" my-2 my-lg-4 " style={{ width: " 30rem" }} >
-            <ListGroup.Item  className="d-flex justify-content-between align-content-center" >
+        <ListGroup className="rounded-4   my-2 my-lg-4 " style={{ width: " 30rem" }} >
+            <ListGroup.Item className="border border-0 border-bottom  d-flex justify-content-between align-content-center" >
                 <div className="lead">Add Your Todo</div>
             </ListGroup.Item>
-            <ListGroup.Item>
-                <Form className='' >
-                    <Form.Row className="justify-content-around d-flex">
+            <ListGroup.Item className='border-0 '>
+                <Form className=' ' >
+                    <Form.Row className="  justify-content-around d-flex">
                         <Col xs="auto" className=" col-8">
                             <Form.Label htmlFor="inlineFormInput" srOnly>
                                 Name
                             </Form.Label>
                             <Form.Control
-                                className="mb-2 "
+                                className="mb-2   "
                                 id="inlineFormInput"
                                 placeholder="Todo"
                                 value={text}
                                 onChange={inputHandler}
+                            
                             />
                         </Col>
                         <Col xs="auto" className="col-2 mx-1">
@@ -51,3 +52,34 @@ const AddTodo = () => {
     )
 }
 export default AddTodo;
+
+
+
+// <ListGroup className="add-todo  my-2 my-lg-4 " style={{ width: " 30rem" }} >
+// <ListGroup.Item  className="d-flex justify-content-between align-content-center" >
+//     <div className="lead">Add Your Todo</div>
+// </ListGroup.Item>
+// <ListGroup.Item>
+//     <Form className='' >
+//         <Form.Row className="justify-content-around d-flex">
+//             <Col xs="auto" className=" col-8">
+//                 <Form.Label htmlFor="inlineFormInput" srOnly>
+//                     Name
+//                 </Form.Label>
+//                 <Form.Control
+//                     className="mb-2 "
+//                     id="inlineFormInput"
+//                     placeholder="Todo"
+//                     value={text}
+//                     onChange={inputHandler}
+//                 />
+//             </Col>
+//             <Col xs="auto" className="col-2 mx-1">
+//                 <Button type="submit" onClick={addTodoButton} className="mb-2 " disabled={!text}>
+//                     Add
+//                 </Button>
+//             </Col>
+//         </Form.Row>
+//     </Form>
+// </ListGroup.Item>
+// </ListGroup>

@@ -1,17 +1,32 @@
 /** @format */
-@import url("https://cdn.syncfusion.com/ej2/material.css");
+/* @import url("https://cdn.syncfusion.com/ej2/material.css"); */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans&display=swap");
 body,
 html {
   /* height: 100vh; */
   /* background: #f2f6fd !important; */
-  
+  font-family: "DM Sans", sans-serif !important;
 }
-.App{
+.App {
   height: 100vh;
 }
-#root {
-  /* height: -webkit-fill-available; */
+
+.todo-item:last-child{
+  border-radius: 0 0 1.1rem 1.1rem;
 }
+.todo-item{
+  background-color: #ffffff ;
+}
+
+
+
+
+
+
+
+
+
+
 .light {
   background: #f2f6fd !important;
   color: black !important;
@@ -31,6 +46,15 @@ html {
 }
 .main-blue {
   color: #007bff;
+}
+.text-logo {
+  text-decoration: none;
+  font-weight: 700;
+  color: #1f1c2e;
+  font-size: 1.4rem;
+}
+.text-logo:hover {
+  color: #1f1c2e;
 }
 .button {
   background: transparent;

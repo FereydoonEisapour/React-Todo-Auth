@@ -1,6 +1,6 @@
-import SignInPage from '../components/auth/SignInPage';
-import Todos from '../components/todos/Todos';
-import UserProfile from '../components/user/UserProfile';
+import SignInPage from '../pages/auth/SignInPage';
+import Todos from '../pages/todos/Todos';
+import UserProfile from '../pages/user/UserProfile';
 const Routes = [{
     exact: true,
     path: '/',

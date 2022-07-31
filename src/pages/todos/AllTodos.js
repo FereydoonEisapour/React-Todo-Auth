@@ -15,11 +15,12 @@ const AllTodos = () => {
         }
     }, [userEmail])
     return (
-        <ListGroup className=" my-4 "style={{ width: " 28rem" }} >
-            <ListGroup.Item  className="w-100 d-flex justify-content-between" >
-                <div className="lead">Tasks</div>
+        <ListGroup className=" my-4 rounded-4   " style={{ width: " 30rem" }} >
+            <ListGroup.Item className="
+                          w-100 d-flex justify-content-between" >
+                <div className="lead " >Tasks</div>
                 <div >
-                    <Badge variant="light" className='bg-light text-primary'>{todos.length}
+                    <Badge variant="light" className='bg-light text-primary '>{todos.length}
                     </Badge> </div>
             </ListGroup.Item>
             {todos.map(todo =>

@@ -1,5 +1,5 @@
 import AddTodo from "../addTodo/AddTodo";
-import SignInPage from './../auth/SignInPage';
+import SignInPage from '../../pages/auth/SignInPage';
 import { useSelector } from 'react-redux';
 import { selectUserEmail } from './../../features/userSlics';
 import AllTodos from './AllTodos'

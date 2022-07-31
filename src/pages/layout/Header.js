@@ -30,7 +30,7 @@ const Header = ({ toggleTheme, theme }) => {
     return (
         <header>
             <nav className='d-flex justify-content-between align-items-center' >
-                <Link to="/" className='col-6 m-2 p-0 text-decoration-none h4 text main-blue'
+                <Link to="/" className='col-6 m-2 p-0  text-logo '
                 > React Todos</Link>
                 <div className='d-flex m-2 align-items-center'>
                     <div className=''>

@@ -36,8 +36,8 @@ const TodoItem = ({ textTodo, done, id }) => {
     <>
       {!editModal ?
         <>
-          <div className='w-100 d-flex justify-content-between border-1 border bg-light '>
-            <div className="col-10">
+          <div className='todo-item border border-0 w-100 d-flex justify-content-between   '>
+            <div className="col-10 ">
               <svg viewBox="0 0 0 0" style={{ position: "absolute", zIndex: -1, opacity: 0, }} >
                 <defs>
                   <linearGradient id="boxGradient" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="25" y2="25">
@@ -63,15 +63,15 @@ const TodoItem = ({ textTodo, done, id }) => {
                   <use xlinkHref="#todo__check" className="todo__check"></use>
                   <use xlinkHref="#todo__circle" className="todo__circle"></use>
                 </svg>
-                <div className="todo__text text-capitalize" style={{ fontSize: '20px' }}>{textTodo}</div>
+                <div className="todo__text text-capitalize d-flex" style={{ fontSize: '20px' }}>{textTodo}</div>
               </label>
             </div>
             <div className=' col-2 d-flex justify-content-evenly ' >
               <button className="btn border-0 p-0  " onClick={delTodo}>
                 <span className="material-icons btn-todo">delete</span>
               </button>
-              <button className="btn border-0 p-0  " onClick={editTodo}>
-                <span className="material-icons btn-todo">edit</span>
+              <button className="btn border-0 p-0 "style={{marginRight:'15px'}} onClick={editTodo}>
+                <span className="material-icons btn-todo ">edit</span>
               </button>
             </div>
           </div>

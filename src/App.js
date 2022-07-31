@@ -1,9 +1,9 @@
 import { BrowserRouter, Route } from "react-router-dom";
 import './App.css';
-import Header from './components/layout/Header';
+import Header from './pages/layout/Header';
 import Routes from './routes/Routes';
 import { Toaster } from 'react-hot-toast';
-import Footer from "./components/layout/Footer";
+import Footer from "./pages/layout/Footer";
 import useDarkMode from "./hooks/DarkMode";
 
 const App = () => {
@@ -13,7 +13,6 @@ const App = () => {
   return (
     <main
       className={`${theme} App`}
-    // className={theme === "dark" ? "dark" : "light"}
     >
       <Toaster />
       <BrowserRouter>
