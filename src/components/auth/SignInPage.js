@@ -6,8 +6,7 @@ import { TextField } from '@mui/material';
 import toast from 'react-hot-toast';
 import signInSvg from '../../assets/images/undraw_fingerprint.svg';
 import signUpSvg from '../../assets/images/undraw_voice_assistant.svg';
-// import SignIn from './SignIn'
-// import SignUp from './SignUp'
+
 import '../../App.css';
 
 function SignInPage() {
@@ -50,13 +49,13 @@ function SignInPage() {
   const SignInUserWithEmailAndPassword = (e) => {
     e.preventDefault();
     auth.signInWithEmailAndPassword(email, password).then((userCredential) => {
-      auth.currentUser.getIdToken(true).then(function (token) {
+   //   auth.currentUser.getIdToken(true).then(function (token) {
         // set the __session cookie
-        document.cookie = '__session=' + token + ';max-age=3600';
+   //     document.cookie = '__session=' + token + ';max-age=3600';
         // dispath(setActiveUser({
         //   userCookie: '__session=' + token + ';max-age=3600'
         // }))
-      })
+      //})
       dispath(setActiveUser({
         userEmail: userCredential.user.email,
         userPassword: userCredential.user.password,
@@ -74,6 +73,7 @@ function SignInPage() {
   const handelSignInWithGoogle = (e) => {
     e.preventDefault();
     auth.signInWithPopup(provider).then((result => {
+      console.log(result.user.email);
       dispath(setActiveUser({
         userName: result.user.displayName,
         userEmail: result.user.email,

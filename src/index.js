@@ -7,15 +7,19 @@ import { store } from './app/store';
 import App from './App';
 //import './assets/styles/CssReset.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+//import { ContextProvider } from './contexts/contextsProviser';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
 
 root.render(
   // <React.StrictMode>
+  // <ContextProvider>
   <Provider store={store}>
     <App />
   </Provider>
+  // </ContextProvider>
+
   // </React.StrictMode>
 );
 

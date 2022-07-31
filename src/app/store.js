@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import userReducer from '../features/userSlics';
-import alertSlics from '../features/alertSlics';
+import userSlics from '../features/userSlics';
+import themeSlice from '../features/themeSlics'
 export const store = configureStore({
     reducer: {
-        user: userReducer,
-        alert: alertSlics
+        user: userSlics,
+      //  theme: themeSlice,
     }
 })

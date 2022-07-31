@@ -4,10 +4,10 @@ import db from '../../data/firebase';
 import firebase from 'firebase/compat/app';
 import { useSelector } from 'react-redux';
 import { selectUserEmail } from '../../features/userSlics';
-function AddTodo() {
+const AddTodo = () => {
     const userEmail = useSelector(selectUserEmail);
     const [text, setText] = useState('');
-    let addTodoButton = (e) => {
+    const addTodoButton = (e) => {
         e.preventDefault()
         db.collection(userEmail).doc(userEmail).collection('todos').add({
             todo: text,
@@ -16,12 +16,12 @@ function AddTodo() {
         })
         setText('');
     }
-    let inputHandler = (e) => {
+    const inputHandler = (e) => {
         setText(e.target.value)
     }
     return (
-        <ListGroup className=" my-4 col-md-8 col-lg-4" style={{ width: " 30rem" }} >
-            <ListGroup.Item active className="w-100 d-flex justify-content-between align-content-center" >
+        <ListGroup className=" my-2 my-lg-4 " style={{ width: " 30rem" }} >
+            <ListGroup.Item  className="d-flex justify-content-between align-content-center" >
                 <div className="lead">Add Your Todo</div>
             </ListGroup.Item>
             <ListGroup.Item>

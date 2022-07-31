@@ -1,38 +1,167 @@
-body , html{
+/** @format */
+@import url("https://cdn.syncfusion.com/ej2/material.css");
+body,
+html {
+  /* height: 100vh; */
+  /* background: #f2f6fd !important; */
+  
+}
+.App{
   height: 100vh;
 }
-/** @format */
-/* 
-.fade-in {
-  transition: opacity is ease;
+#root {
+  /* height: -webkit-fill-available; */
 }
-.fade-out {
-  opacity: 0;
-  transition: opacity 1s ease;
+.light {
+  background: #f2f6fd !important;
+  color: black !important;
 }
-.scale-up-center {
-  -webkit-animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
-    both;
-  animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+.dark {
+  background: #333 !important;
+  color: #ffffff !important;
 }
 
-@-webkit-keyframes scale-up-center {
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 1000;
+}
+.main-blue {
+  color: #007bff;
+}
+.button {
+  background: transparent;
+  color: #3bd9d9;
+  font-weight: 400;
+  font-size: 24px;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  border: 2px solid#3bd9d9;
+  border-radius: 32px;
+  transform: translate(0);
+  overflow: hidden;
+  cursor: pointer;
+}
+.button::before {
+  content: "";
+  position: absolute;
+  background: #3bd9d9;
+  width: 8px;
+  top: 0;
+  bottom: 0;
+  left: -32px;
+  transform: rotate(-16deg);
+  filter: blur(6px);
+}
+.button:hover:before {
+  left: calc(100% + 32px);
+  transition: 0.75s;
+}
+.btn-todo {
+  color: #163135;
+  border: none;
+}
+.btn-todo:hover {
+  color: #27fdc7;
+}
+.slide-out-bck-center {
+  -webkit-animation: slide-out-bck-center 0.5s
+    cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  animation: slide-out-bck-center 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+    both;
+}
+
+@-webkit-keyframes slide-out-bck-center {
   0% {
-    -webkit-transform: scale(0.5);
-    transform: scale(0.5);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
   }
   100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
+    -webkit-transform: translateZ(-1100px);
+    transform: translateZ(-1100px);
+    opacity: 0;
   }
 }
-@keyframes scale-up-center {
+@keyframes slide-out-bck-center {
   0% {
-    -webkit-transform: scale(0.5);
-    transform: scale(0.5);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
   }
   100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
+    -webkit-transform: translateZ(-1100px);
+    transform: translateZ(-1100px);
+    opacity: 0;
+  }
+}
+
+/* @media (prefers-color-scheme: dark) {
+  .light.dark-scheme {
+    background: #333;
+    color: white;
+  }
+  .dark.dark-scheme {
+    background: black;
+    color: #ddd;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .light.light-scheme {
+    background: white;
+    color: #555;
+  }
+  .dark.light-scheme {
+    background: #eee;
+    color: black;
   }
 } */
+
+/* .light,
+.dark {
+  display: inline-block;
+  padding: 1em;
+  width: 7em;
+  height: 2em;
+  vertical-align: middle;
+} */
+
+/** @format */
+/* 
+  .fade-in {
+    transition: opacity is ease;
+  }
+  .fade-out {
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+  .scale-up-center {
+    -webkit-animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
+      both;
+    animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  }
+  
+  @-webkit-keyframes scale-up-center {
+    0% {
+      -webkit-transform: scale(0.5);
+      transform: scale(0.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  }
+  @keyframes scale-up-center {
+    0% {
+      -webkit-transform: scale(0.5);
+      transform: scale(0.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  } */

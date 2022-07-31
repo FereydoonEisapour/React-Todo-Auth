@@ -1,6 +1,6 @@
 import SignInPage from '../components/auth/SignInPage';
 import Todos from '../components/todos/Todos';
-import User from '../components/user/User';
+import UserProfile from '../components/user/UserProfile';
 const Routes = [{
     exact: true,
     path: '/',
@@ -10,7 +10,7 @@ const Routes = [{
     component: SignInPage
 }, {
     path: '/user',
-    component: User
+    component: UserProfile
 }]
 
 export default Routes;

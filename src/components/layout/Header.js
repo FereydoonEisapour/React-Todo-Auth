@@ -6,10 +6,10 @@ import { Switch } from '@mui/material';
 import useDarkMode from '../../hooks/DarkMode';
 import { Link, NavLink, Redirect } from 'react-router-dom';
 import { useEffect } from 'react';
-function Header() {
+import userAvatarSvg from '../../assets/images/userAvatar.svg'
+
+const Header = ({ toggleTheme, theme }) => {
     const dispath = useDispatch();
-    const [theme, toggleTheme] = useDarkMode()
-    const userName = useSelector(selectUserName);
     const userEmail = useSelector(selectUserEmail);
     const userAvatar = useSelector(selectUserAvatar);
 
@@ -27,39 +27,44 @@ function Header() {
                 console.log(errorMessage);
             })
     }
-
-    
     return (
-        <Navbar className='d-flex w-100' bg={theme} variant="light">
-            <Container >
-                <Link to="/" className='col-10 m-0 p-0' style={{ textDecoration: 'none', fontSize: '2rem', color: '#007bff' }}> React Todos</Link>
-
-                {/* <Navbar.Brand className='col-10 m-0 p-0' style={{ fontSize: '2rem', color: '#007bff' }} href="#home">
-                    react
-                </Navbar.Brand> */}
-                <Switch {...label} onClick={toggleTheme}
-                    checked={theme === 'light' ? false : true}
-                />
-                {/* <button onClick={toggleTheme}>dark</button> */}
-                {userEmail ?
-                    (<Dropdown className='col-2 border-fucus-white '>
-                        <Dropdown.Toggle variant="" id="dropdown-basic-button">
-                            <img src={userAvatar ? userAvatar
-                                : 'https://media.istockphoto.com/vectors/user-icon-flat-isolated-on-white-background-user-symbol-vector-vector-id1300845620?k=20&m=1300845620&s=612x612&w=0&h=f4XTZDAv7NPuZbG0habSpU0sNgECM0X7nbKzTUta3n8='}
-                                alt="avatar" width="32" height="32" className="ml-5 rounded-circle" />
-                        </Dropdown.Toggle>
-
-                        <Dropdown.Menu>
-                            <div className='mx-3' >
-                                <Link to="/user" style={{ textDecoration: 'none' }}>Profile</Link>
-                            </div>
-                            <Dropdown.Item href="" onClick={handelSignOut}>Log out</Dropdown.Item>
-                            <Dropdown.Item href="">Another action</Dropdown.Item>
-                        </Dropdown.Menu>
-                    </Dropdown>)
-                    : ('')}
-            </Container>
-        </Navbar>
+        <header>
+            <nav className='d-flex justify-content-between align-items-center' >
+                <Link to="/" className='col-6 m-2 p-0 text-decoration-none h4 text main-blue'
+                > React Todos</Link>
+                <div className='d-flex m-2 align-items-center'>
+                    <div className=''>
+                        <Switch {...label} onClick={toggleTheme} className="" size='small'
+                            checked={theme === 'light' ? false : true}
+                        />
+                    </div>
+                    <div>
+                        {userEmail ?
+                            (<Dropdown className='col-2 border-fucus-white '>
+                                <Dropdown.Toggle variant="" id="dropdown-basic-button">
+                                    <img src={userAvatar ? userAvatar
+                                        : userAvatarSvg}
+                                        alt="avatar" width="32" height="32" className="ml-5 rounded-circle" />
+                                </Dropdown.Toggle>
+                                <Dropdown.Menu>
+                                    <div className='mx-3' >
+                                        <Link to="/user" style={{ textDecoration: 'none' }}>Profile</Link>
+                                    </div>
+                                    <Dropdown.Item href="" onClick={handelSignOut}>Log out</Dropdown.Item>
+                                    <Dropdown.Item href="">Another action</Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown>)
+                            : ('')}
+                    </div>
+                </div>
+            </nav>
+        </header>
     )
 }
 export default Header;
+
+
+
+{/* <Navbar.Brand className='col-10 m-0 p-0' style={{ fontSize: '2rem', color: '#007bff' }} href="#home">
+                        react
+                    </Navbar.Brand> */}
