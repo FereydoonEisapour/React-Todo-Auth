@@ -11,10 +11,11 @@ const TodoItem = ({ textTodo, done, id }) => {
   const [editText, setEditText] = useState('');
   const userEmail = useSelector(selectUserEmail);
   const [checkedInput, setCheckedInput] = useState(done)
-  const delTodo = () => db.collection(userEmail).doc(userEmail).collection('todos').doc(id).delete()
-  const editTodo = () => setEditModal(true)
   const handleClose = () => setEditModal(false)
   const inputHandler = (event) => setEditText(event.target.value)
+
+  const delTodo = () => db.collection(userEmail).doc(userEmail).collection('todos').doc(id).delete()
+  const editTodo = () => setEditModal(true)
 
   const toggleDone = () => {
     setCheckedInput(!done)
@@ -70,7 +71,7 @@ const TodoItem = ({ textTodo, done, id }) => {
               <button className="btn border-0 p-0  " onClick={delTodo}>
                 <span className="material-icons btn-todo">delete</span>
               </button>
-              <button className="btn border-0 p-0 "style={{marginRight:'15px'}} onClick={editTodo}>
+              <button className="btn border-0 p-0 " style={{ marginRight: '15px' }} onClick={editTodo}>
                 <span className="material-icons btn-todo ">edit</span>
               </button>
             </div>
@@ -78,7 +79,7 @@ const TodoItem = ({ textTodo, done, id }) => {
         </>
         :
         <>
-          <div className='w-100 d-flex justify-content-between border-1 border '>
+          <div className='w-100 d-flex justify-content-between border-1 border todo-item '>
             <div className="col-10">
               <svg viewBox="0 0 0 0" style={{ position: "absolute", zIndex: -1, opacity: 0, }} >
                 <defs>
@@ -96,7 +97,7 @@ const TodoItem = ({ textTodo, done, id }) => {
                   <circle id="todo__circle" cx="13.5" cy="12.5" r="10"></circle>
                 </defs>
               </svg>
-              <input type="text" className='w-100 ' placeholder={textTodo}
+              <input type="text" className='w-100 p-2 h5  border border-0 mx-3 ' placeholder={textTodo}
                 value={editText}
                 onChange={inputHandler}
               />

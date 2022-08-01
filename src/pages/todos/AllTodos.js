@@ -15,7 +15,7 @@ const AllTodos = () => {
         }
     }, [userEmail])
     return (
-        <ListGroup className=" my-4 rounded-4   " style={{ width: " 30rem" }} >
+        <ListGroup className={`my-4 rounded-4 `} style={{ width: " 30rem" }} >
             <ListGroup.Item className="
                           w-100 d-flex justify-content-between" >
                 <div className="lead " >Tasks</div>

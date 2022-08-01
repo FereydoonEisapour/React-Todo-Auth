@@ -3,7 +3,8 @@ import SignInPage from '../../pages/auth/SignInPage';
 import { useSelector } from 'react-redux';
 import { selectUserEmail } from './../../features/userSlics';
 import AllTodos from './AllTodos'
-const Todos = ({theme}) => {
+import useDarkMode from "../../hooks/DarkMode";
+const Todos = () => {
   const userEmail = useSelector(selectUserEmail);
 
   return (

@@ -49,12 +49,12 @@ function SignInPage() {
   const SignInUserWithEmailAndPassword = (e) => {
     e.preventDefault();
     auth.signInWithEmailAndPassword(email, password).then((userCredential) => {
-   //   auth.currentUser.getIdToken(true).then(function (token) {
-        // set the __session cookie
-   //     document.cookie = '__session=' + token + ';max-age=3600';
-        // dispath(setActiveUser({
-        //   userCookie: '__session=' + token + ';max-age=3600'
-        // }))
+      //   auth.currentUser.getIdToken(true).then(function (token) {
+      // set the __session cookie
+      //     document.cookie = '__session=' + token + ';max-age=3600';
+      // dispath(setActiveUser({
+      //   userCookie: '__session=' + token + ';max-age=3600'
+      // }))
       //})
       dispath(setActiveUser({
         userEmail: userCredential.user.email,
@@ -70,22 +70,37 @@ function SignInPage() {
       else { toast.error(errorMessage) }
     })
   }
+  // const handelSignInWithGoogle = (e) => {
+  //   e.preventDefault();
+  //   auth.signInWithPopup(provider).then((result => {
+  //     console.log(result.user.email);
+  //     dispath(setActiveUser({
+  //       userName: result.user.displayName,
+  //       userEmail: result.user.email,
+  //       userAvatar: result.user.photoURL,
+  //     }, toast.success('You are login succesfull.')
+  //     ).catch((error) => {
+  //       const errorCode = error.code;
+  //       const errorMessage = error.message;
+  //       console.log(errorCode);
+  //       toast.error(errorMessage);
+  //     }))
+  //   }))
+  // }
   const handelSignInWithGoogle = (e) => {
     e.preventDefault();
-    auth.signInWithPopup(provider).then((result => {
-      console.log(result.user.email);
+    auth.signInWithPopup(provider).then((result) => {
       dispath(setActiveUser({
         userName: result.user.displayName,
         userEmail: result.user.email,
-        userAvatar: result.user.photoURL,
-      }, toast.success('You are login succesfull.')
-      ).catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode);
-        toast.error(errorMessage);
-      }))
-    }))
+        userAvatar: result.user.photoURL
+      }, toast.success('You are login succesfull')))
+    }).catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorCode);
+      toast.error(errorMessage)
+    })
   }
   const ResetPassword = (e) => {
     e.preventDefault()
