@@ -5,7 +5,6 @@ import Routes from "./routes/Routes";
 import { Toaster } from "react-hot-toast";
 import Footer from "./pages/layout/Footer";
 import useDarkMode from "./hooks/DarkMode";
-import Button from "./Utils/Button";
 const App = ({ styleClass }) => {
   const [theme, toggleTheme] = useDarkMode();
   return (
@@ -19,10 +18,6 @@ const App = ({ styleClass }) => {
         {Routes.map((route, i) => (
           <Route {...route} key={i} theme={theme} />
         ))}
-        {/* <Button
-          value="Click me"
-          styleClass={styleClass}
-        /> */}
         <Footer theme={theme} />
       </BrowserRouter>
     </main>
