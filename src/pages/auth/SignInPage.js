@@ -140,7 +140,7 @@ const SignInPage = () => {
   return (
     <>
       {!loginCard ? (
-        <section className="d-flex py-4 ">
+        <section className="d-flex py-5 ">
           <div className=" scale-up-center col-lg-6  d-flex justify-content-center align-item-center align-content-center ">
             <img className="imgimg-fluid w-75 " src={signInSvg} alt="singin" />
           </div>
@@ -268,7 +268,7 @@ const SignInPage = () => {
           </div>
         </section>
       ) : (
-        <section className="d-flex section_signin py-4 ">
+        <section className="d-flex section_signin py-5 ">
           <div className="scale-up-center col-lg-6  d-flex justify-content-center align-item-center align-content-center ">
             <img className="imgimg-fluid w-75 " src={signUpSvg} alt="" />
           </div>
