@@ -1,15 +1,13 @@
 import AddTodo from "../addTodo/AddTodo";
-import SignInPage from '../../pages/auth/SignInPage';
-import { useSelector } from 'react-redux';
-import { selectUserEmail } from './../../features/userSlics';
-import AllTodos from './AllTodos'
-import useDarkMode from "../../hooks/DarkMode";
+import SignInPage from "../../pages/auth/SignInPage";
+import { useSelector } from "react-redux";
+import { selectUserEmail } from "./../../features/userSlics";
+import AllTodos from "./AllTodos";
 const Todos = () => {
   const userEmail = useSelector(selectUserEmail);
-
   return (
-    < >
-      {userEmail ?
+    <>
+      {userEmail ? (
         <div className={`container `}>
           <div className="d-flex justify-content-center">
             <AddTodo />
@@ -18,13 +16,10 @@ const Todos = () => {
             <AllTodos />
           </div>
         </div>
-        : <SignInPage />}
+      ) : (
+        <SignInPage />
+      )}
     </>
-  )
-}
-export default Todos
-
-
-
-
-
+  );
+};
+export default Todos;
