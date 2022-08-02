@@ -4,7 +4,6 @@ import db from "../../data/firebase";
 import { useSelector } from "react-redux";
 import { selectUserEmail } from "../../features/userSlics";
 
-import "./Todos.css";
 const TodoItem = ({ textTodo, done, id }) => {
   const [editModal, setEditModal] = useState(false);
 
@@ -14,13 +13,7 @@ const TodoItem = ({ textTodo, done, id }) => {
   const handleClose = () => setEditModal(false);
   const inputHandler = (event) => setEditText(event.target.value);
 
-  const delTodo = () =>
-    db
-      .collection(userEmail)
-      .doc(userEmail)
-      .collection("todos")
-      .doc(id)
-      .delete();
+  const delTodo = () => db.collection(userEmail).doc(userEmail).collection("todos").doc(id).delete();
   const editTodo = () => setEditModal(true);
 
   const toggleDone = () => {

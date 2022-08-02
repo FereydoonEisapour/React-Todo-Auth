@@ -31,16 +31,12 @@ const SignInPage = () => {
   };
   const createUserWithEmailAndPassword = (e) => {
     e.preventDefault();
-    auth
-      .createUserWithEmailAndPassword(email, password)
-      .then((result) => {
-        dispath(
-          setActiveUser({
+    auth.createUserWithEmailAndPassword(email, password).then((result) => {
+        dispath( setActiveUser({
             userEmail: result.user.email,
             userPassword: result.user.password,
-          })
-        );
-        toast.success("You are sign up succesfull.");
+          }));
+           toast.success("You are sign up succesfull.");
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -63,11 +59,8 @@ const SignInPage = () => {
   };
   const SignInUserWithEmailAndPassword = (e) => {
     e.preventDefault();
-    auth
-      .signInWithEmailAndPassword(email, password)
-      .then((userCredential) => {
-        dispath(
-          setActiveUser({
+    auth.signInWithEmailAndPassword(email, password).then((userCredential) => {
+        dispath(setActiveUser({
             userEmail: userCredential.user.email,
             userPassword: userCredential.user.password,
           })
@@ -89,7 +82,6 @@ const SignInPage = () => {
         }
       });
   };
-
   const handelSignInWithGoogle = (e) => {
     e.preventDefault();
     auth
