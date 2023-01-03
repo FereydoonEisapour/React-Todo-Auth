@@ -13,7 +13,10 @@ const TodoItem = ({ textTodo, done, id }) => {
   const handleClose = () => setEditModal(false);
   const inputHandler = (event) => setEditText(event.target.value);
 
-  const delTodo = () => db.collection(userEmail).doc(userEmail).collection("todos").doc(id).delete();
+  const delTodo = () => {
+    db.collection(userEmail).doc(userEmail).collection("todos").doc(id).delete()
+    navigator.vibrate(200);
+  };
   const editTodo = () => setEditModal(true);
 
   const toggleDone = () => {
