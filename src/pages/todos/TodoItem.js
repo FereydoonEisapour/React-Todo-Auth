@@ -15,7 +15,7 @@ const TodoItem = ({ textTodo, done, id }) => {
 
   const delTodo = () => {
     db.collection(userEmail).doc(userEmail).collection("todos").doc(id).delete()
-    navigator.vibrate(200);
+    navigator.vibrate(100);
   };
   const editTodo = () => setEditModal(true);
 

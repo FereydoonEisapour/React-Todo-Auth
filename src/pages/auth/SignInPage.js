@@ -8,6 +8,7 @@ import { auth, provider } from "../../data/firebase";
 import { setActiveUser } from "../../features/userSlics";
 
 import "../../App.css";
+import { removeCookie, setCookie } from "../../hooks/cookies";
 
 const SignInPage = () => {
   const dispath = useDispatch();
@@ -32,12 +33,14 @@ const SignInPage = () => {
   const createUserWithEmailAndPassword = (e) => {
     e.preventDefault();
     auth.createUserWithEmailAndPassword(email, password).then((result) => {
-        dispath( setActiveUser({
-            userEmail: result.user.email,
-            userPassword: result.user.password,
-          }));
-           toast.success("You are sign up succesfull.");
-      })
+      dispath(setActiveUser({
+        userEmail: result.user.email,
+        userPassword: result.user.password,
+      }));
+      removeCookie('user')
+      setCookie('user', result.user.email)
+      toast.success("You are sign up succesfull.");
+    })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
@@ -60,13 +63,14 @@ const SignInPage = () => {
   const SignInUserWithEmailAndPassword = (e) => {
     e.preventDefault();
     auth.signInWithEmailAndPassword(email, password).then((userCredential) => {
-        dispath(setActiveUser({
-            userEmail: userCredential.user.email,
-            userPassword: userCredential.user.password,
-          })
-        );
-        toast.success("You are login succesfull.");
-      })
+      dispath(setActiveUser({
+        userEmail: userCredential.user.email,
+        userPassword: userCredential.user.password,
+      }));
+      removeCookie('user')
+      setCookie('user', userCredential.user.email)
+      toast.success("You are login succesfull.");
+    })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
@@ -94,9 +98,12 @@ const SignInPage = () => {
               userEmail: result.user.email,
               userAvatar: result.user.photoURL,
             },
+            
+            removeCookie('user'),
+            setCookie('user', result.user.email),
             toast.success("You are login succesfull")
-          )
-        );
+            )
+            );
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -115,6 +122,8 @@ const SignInPage = () => {
         .then(() => {
           toast.success("We send reset password link to your Mail");
         })
+        removeCookie('user')
+      
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
