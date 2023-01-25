@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
-const Footer = ({ theme }) => {
+const Footer = () => {
   return (
     <footer
-      className={`footer ${theme}  d-flex flex-wrap justify-content-between align-items-center py-3 border-top p-4 `}
+      className={`footer  d-flex flex-wrap justify-content-between align-items-center py-3  p-4 `}
     >
       <div className="col-md-4 d-flex align-items-center">
         <a
@@ -13,11 +13,11 @@ const Footer = ({ theme }) => {
             <use xlinkHref="#bootstrap"></use>
           </svg>
         </a>
-        <span className="mb-3 mb-md-0 text-muted">© 2022 React Todo </span>
+        <span className="mb-3 mb-md-0 text-color ">© {new Date().getUTCFullYear()} React Todo </span>
       </div>
       <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
         <li className="ms-3">
-          <a className="" href="https://github.com/FereydoonEisapour">
+          <a className="" href="https://github.com/FereydoonEisapour/React-Todo-Auth">
             <span className="bi me-1 mr-3 " width="16" height="16">
               <i
                 className="fa fa-github text-muted"

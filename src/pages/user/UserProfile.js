@@ -16,10 +16,10 @@ const UserProfile = () => {
     const userName = useSelector(selectUserName);
 
     return (
-        <div className='d-flex  justify-content-center align-items-center' style={{ height: '80vh', overflow: 'auto' }}>
+        <div className='d-flex  justify-content-center align-items-center ' style={{ height: '80vh', overflow: 'auto' }}>
             {userEmail ?
-                <div className=''>
-                    <Card sx={{ minWidth: 300, maxWidth: 700 }}>
+                <div >
+                    <Card sx={{ minWidth: 300, maxWidth: 700 }}className='main-container ' >
                         <CardMedia
                             component="img"
                             height="140"
@@ -27,16 +27,16 @@ const UserProfile = () => {
                             alt="user avatar"
                             className="w-50 mx-auto"
                         />
-                        <CardContent>
+                        <CardContent   >
                             <Typography gutterBottom variant="h5" component="div">
                                 {userName}
                             </Typography>
-                            <Typography variant="body2" color="text.secondary">
+                            <Typography variant="body2" color="text.secondary"className="text-color">
                                 about me
                             </Typography>
                         </CardContent>
                         <CardActions>
-                            <Button size="small" disabled>Share</Button>
+                            <Button size="small" disabled className="text-color">Share</Button>
                         </CardActions>
                     </Card>
                 </div>

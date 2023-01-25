@@ -7,7 +7,7 @@ import signUpSvg from "../../assets/images/undraw_voice_assistant.svg";
 import { auth, provider } from "../../data/firebase";
 import { setActiveUser } from "../../features/userSlics";
 
-import "../../App.css";
+import "../../assets/styles/App.css";
 import { removeCookie, setCookie } from "../../hooks/cookies";
 
 const SignInPage = () => {
@@ -141,28 +141,29 @@ const SignInPage = () => {
   return (
     <>
       {!loginCard ? (
-        <section className="d-flex py-5 ">
+        <section className=" d-flex py-5 ">
           <div className=" scale-up-center col-lg-6  d-flex justify-content-center align-item-center align-content-center ">
             <img className="imgimg-fluid w-75 " src={signInSvg} alt="singin" />
           </div>
-          <div className="col-12 col-lg-6  justify-content-center align-item-center align-content-center ">
+          <div className=" col-12 col-lg-6  justify-content-center align-item-center align-content-center ">
             <div
               className="modal modal-signin position-static d-block  "
               tabIndex="-1"
               role="dialog"
               id="modalSignin"
             >
-              <div className="modal-dialog" role="document">
-                <div className="modal-content rounded-2 shadow border-0 ">
+              <div className=" modal-dialog" role="document">
+                <div className="main-container  modal-content rounded-2 shadow border-0 ">
                   <div className="modal-body p-4 pt-0 ">
                     <form className="mt-3 ">
-                      <div className="form-floating mb-3">
+                      <div className="form-floating mb-3 ">
                         <TextField
                           error={emailError}
                           required
                           fullWidth
                           label="Email"
                           id="fullWidth"
+                          className="text-color main-container "
                           onChange={(e) => inputEmailHandler(e)}
                         />
                         <small className="text-danger">
@@ -269,7 +270,7 @@ const SignInPage = () => {
           </div>
         </section>
       ) : (
-        <section className="d-flex section_signin py-5 ">
+        <section className="App-container d-flex section_signin py-5 ">
           <div className="scale-up-center col-lg-6  d-flex justify-content-center align-item-center align-content-center ">
             <img className="imgimg-fluid w-75 " src={signUpSvg} alt="" />
           </div>

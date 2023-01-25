@@ -21,13 +21,13 @@ const AddTodo = () => {
   };
   return (
     <ListGroup
-      className="rounded-4   my-2 my-lg-4 "
+      className="rounded-4   my-2 my-lg-4  "
       style={{ width: " 30rem" }}
     >
-      <ListGroup.Item className="border border-0 border-bottom  d-flex justify-content-between align-content-center">
+      <ListGroup.Item className="main-container border border-0 border-bottom  d-flex justify-content-between align-content-center">
         <div className="lead">Add Your Todo</div>
       </ListGroup.Item>
-      <ListGroup.Item className="border-0 ">
+      <ListGroup.Item className="border-0 main-container">
         <Form className=" ">
           <Form.Row className="  justify-content-around d-flex">
             <Col xs="auto" className=" col-8">

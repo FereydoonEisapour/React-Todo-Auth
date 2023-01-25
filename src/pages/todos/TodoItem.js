@@ -102,7 +102,7 @@ const TodoItem = ({ textTodo, done, id }) => {
                   <use xlinkHref="#todo__circle" className="todo__circle"></use>
                 </svg>
                 <div
-                  className="todo__text text-capitalize d-flex"
+                  className="todo__text text-capitalize d-flex text-color"
                   style={{ fontSize: "20px" }}
                 >
                   {textTodo}
@@ -111,14 +111,14 @@ const TodoItem = ({ textTodo, done, id }) => {
             </div>
             <div className=" col-2 d-flex justify-content-evenly ">
               <button className="btn border-0 p-0  " onClick={delTodo}>
-                <span className="material-icons btn-todo">delete</span>
+                <span className="material-icons btn-todo text-color">delete</span>
               </button>
               <button
                 className="btn border-0 p-0 "
                 style={{ marginRight: "15px" }}
                 onClick={editTodo}
               >
-                <span className="material-icons btn-todo ">edit</span>
+                <span className="material-icons btn-todo text-color">edit</span>
               </button>
             </div>
           </div>
@@ -167,18 +167,18 @@ const TodoItem = ({ textTodo, done, id }) => {
               </svg>
               <input
                 type="text"
-                className="w-100 p-2 h5  border border-0 mx-3 "
+                className="w-100 p-2  h5  border border-0 m-2 "
                 placeholder={textTodo}
                 value={editText}
                 onChange={inputHandler}
               />
             </div>
-            <div className=" col-2 d-flex justify-content-evenly ">
+            <div className=" col-2 d-flex justify-content-evenly text-color ">
               <button className="btn border-0 p-0  " onClick={handleClose}>
-                <span className="material-icons btn-todo">cancel</span>
+                <span className="material-icons btn-todo text-color">cancel</span>
               </button>
               <button className="btn border-0 p-0 " onClick={updateTodo}>
-                <span className="material-icons btn-todo">done</span>
+                <span className="material-icons btn-todo text-color">done</span>
               </button>
             </div>
           </div>
