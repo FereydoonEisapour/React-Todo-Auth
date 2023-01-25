@@ -11,7 +11,6 @@ import userAvatarSvg from "../../assets/images/userAvatar.svg";
 import useDarkMode from "../../hooks/DarkMode";
 const Header = () => {
   const [theme, toggleTheme] = useDarkMode()
-  console.log(theme)
   const dispath = useDispatch();
   const userEmail = useSelector(selectUserEmail);
   const userAvatar = useSelector(selectUserAvatar);
@@ -50,7 +49,7 @@ const Header = () => {
             {userEmail ? (
               <Dropdown className="col-2 border-fucus-white ">
                 <Dropdown.Toggle variant="" id="dropdown-basic-button" className="">
-                <img
+                  <img
                     src={userAvatar ? userAvatar : userAvatarSvg}
                     alt="avatar"
                     width="32"

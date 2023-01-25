@@ -98,12 +98,12 @@ const SignInPage = () => {
               userEmail: result.user.email,
               userAvatar: result.user.photoURL,
             },
-            
+
             removeCookie('user'),
             setCookie('user', result.user.email),
             toast.success("You are login succesfull")
-            )
-            );
+          )
+        );
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -122,8 +122,8 @@ const SignInPage = () => {
         .then(() => {
           toast.success("We send reset password link to your Mail");
         })
-        removeCookie('user')
-      
+      removeCookie('user')
+
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
@@ -146,14 +146,9 @@ const SignInPage = () => {
             <img className="imgimg-fluid w-75 " src={signInSvg} alt="singin" />
           </div>
           <div className=" col-12 col-lg-6  justify-content-center align-item-center align-content-center ">
-            <div
-              className="modal modal-signin position-static d-block  "
-              tabIndex="-1"
-              role="dialog"
-              id="modalSignin"
-            >
+            <div className="modal modal-signin position-static d-block  " tabIndex="-1" role="dialog" id="modalSignin">
               <div className=" modal-dialog" role="document">
-                <div className="main-container  modal-content rounded-2 shadow border-0 ">
+                <div className="  modal-content rounded-2 shadow border-0 ">
                   <div className="modal-body p-4 pt-0 ">
                     <form className="mt-3 ">
                       <div className="form-floating mb-3 ">
@@ -163,12 +158,10 @@ const SignInPage = () => {
                           fullWidth
                           label="Email"
                           id="fullWidth"
-                          className="text-color main-container "
+                          className="text-color  "
                           onChange={(e) => inputEmailHandler(e)}
                         />
-                        <small className="text-danger">
-                          {emailErrorMessage}
-                        </small>
+                        <small className="text-danger">{emailErrorMessage} </small>
                       </div>
                       <div className="form-floating mb-3">
                         <TextField
@@ -181,42 +174,27 @@ const SignInPage = () => {
                           autoComplete="current-password"
                           onChange={(e) => inputPasswordHandler(e)}
                         />
-                        <small className="text-danger">
-                          {passwordErrorMessage}
-                        </small>
+                        <small className="text-danger"> {passwordErrorMessage} </small>
                       </div>
                       <div className="mt-1 d-flex justify-content-end ">
-                        <button
-                          style={{ fontSize: "13px" }}
-                          className="mb-1 mx-1 bg-light border-0 "
-                          type="submit"
-                          onClick={(e) => ResetPassword(e)}
-                        >
-                          Forgotten password?{" "}
+                        <button style={{ fontSize: "13px" }} className="mb-1 mx-1 bg-light border-0 " type="submit"
+                          onClick={(e) => ResetPassword(e)}>
+                          Forgotten password?
                         </button>
                       </div>
                       <button
                         className="w-100 mb-5 btn btn-lg rounded-3 btn-primary button"
                         type="submit"
                         onClick={(e) => SignInUserWithEmailAndPassword(e)}
-                      >
-                        Sign in{" "}
-                      </button>
+                      > Sign in </button>
                       <div className="d-flex align-align-content-between justify-content-center mx-auto">
                         <button
                           className="button py-2 mb-2 btn btn-outline-primary rounded-5 mx-1 "
                           type="submit"
                           onClick={handelSignInWithGoogle}
                         >
-                          <span
-                            className="bi me-1 mr-3 "
-                            width="16"
-                            height="16"
-                          >
-                            <i
-                              className="fa fa-google"
-                              style={{ fontSize: "24px" }}
-                            ></i>
+                          <span className="bi me-1 mr-3 " width="16" height="16">
+                            <i className="fa fa-google" style={{ fontSize: "24px" }} ></i>
                           </span>
                         </button>
                         <button
@@ -224,31 +202,13 @@ const SignInPage = () => {
                           type="submit"
                           disabled
                         >
-                          <span
-                            className="bi me-1 mr-3 "
-                            width="16"
-                            height="16"
-                          >
-                            <i
-                              className="fa fa-twitter"
-                              style={{ fontSize: "24px" }}
-                            ></i>
+                          <span className="bi me-1 mr-3 " width="16" height="16" >
+                            <i className="fa fa-twitter" style={{ fontSize: "24px" }} ></i>
                           </span>
                         </button>
-                        <button
-                          className=" py-2 mb-2 btn btn-outline-dark rounded-5 mx-1 "
-                          type="submit"
-                          disabled
-                        >
-                          <span
-                            className="bi me-1 mr-3 "
-                            width="16"
-                            height="16"
-                          >
-                            <i
-                              className="fa fa-apple"
-                              style={{ fontSize: "24px" }}
-                            ></i>
+                        <button className=" py-2 mb-2 btn btn-outline-dark rounded-5 mx-1 " type="submit" disabled >
+                          <span className="bi me-1 mr-3 " width="16" height="16" >
+                            <i className="fa fa-apple" style={{ fontSize: "24px" }}  ></i>
                           </span>
                         </button>
                       </div>
@@ -282,7 +242,7 @@ const SignInPage = () => {
               id="modalSignin"
             >
               <div className="modal-dialog" role="document">
-                <div className="modal-content rounded-2 shadow  border-0">
+                <div className=" modal-content rounded-2 shadow  border-0">
                   <div className="modal-body p-4 pt-0">
                     <form className="mt-3">
                       <div className="form-floating mb-3">
@@ -298,7 +258,7 @@ const SignInPage = () => {
                           {emailErrorMessage}
                         </small>
                       </div>
-                      <div className="form-floating mb-5">
+                      <div className="form-floating mb-5 ">
                         <TextField
                           error={passwordError}
                           required
@@ -307,6 +267,7 @@ const SignInPage = () => {
                           id="fullWidth-password-input"
                           type="password"
                           autoComplete="current-password"
+
                           onChange={(e) => inputPasswordHandler(e)}
                         />
                         <small className="text-danger">
@@ -343,15 +304,8 @@ const SignInPage = () => {
                           disabled
                           onClick={handelSignInWithGoogle}
                         >
-                          <span
-                            className="bi me-1 mr-3 "
-                            width="16"
-                            height="16"
-                          >
-                            <i
-                              className="fa fa-twitter"
-                              style={{ fontSize: "24px" }}
-                            ></i>
+                          <span className="bi me-1 mr-3 " width="16" height="16" >
+                            <i className="fa fa-twitter" style={{ fontSize: "24px" }} ></i>
                           </span>
                         </button>
                         <button
