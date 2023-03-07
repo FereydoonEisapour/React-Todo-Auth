@@ -141,7 +141,7 @@ const SignInPage = () => {
   return (
     <>
       {!loginCard ? (
-        <section className=" d-flex py-5 ">
+        <section className=" d-flex py-3">
           <div className=" scale-up-center col-lg-6  d-flex justify-content-center align-item-center align-content-center ">
             <img className="imgimg-fluid w-75 " src={signInSvg} alt="singin" />
           </div>
